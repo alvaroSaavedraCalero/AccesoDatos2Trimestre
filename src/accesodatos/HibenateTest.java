@@ -5,6 +5,9 @@
  */
 package accesodatos;
 
+import accesodatos.modelos.Libros;
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,7 +22,16 @@ public class HibenateTest {
         Session sesion = sessionFactory.openSession();
         sesion.beginTransaction();
         
+        Query q1 = sesion.createQuery("FROM Libros");
+        List<Libros> libros = q1.list();
+        
         sesion.getTransaction().commit();
+        
+        
+        for (Libros l : libros) {
+            System.out.println(l.toString());
+        }
+        
         sesion.close();
     }
 }
