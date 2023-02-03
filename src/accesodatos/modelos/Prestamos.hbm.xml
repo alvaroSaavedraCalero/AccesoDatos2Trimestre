@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-feb-2023 17:33:47 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="accesodatos.modelos.Prestamos" table="prestamos" catalog="prestamos" optimistic-lock="version">
+        <composite-id name="id" class="accesodatos.modelos.PrestamosId">
+            <key-property name="codigolibro" type="int">
+                <column name="codigolibro" />
+            </key-property>
+            <key-property name="fechaprestamo" type="date">
+                <column name="fechaprestamo" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="documento" type="string">
+            <column name="documento" length="8" not-null="true" />
+        </property>
+        <property name="fechadevolucion" type="date">
+            <column name="fechadevolucion" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

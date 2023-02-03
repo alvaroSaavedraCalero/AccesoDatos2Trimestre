@@ -46,5 +46,8 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/prestamos?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">1234</property>
+    <mapping resource="accesodatos/modelos/Prestamos.hbm.xml"/>
+    <mapping resource="accesodatos/modelos/Socios.hbm.xml"/>
+    <mapping resource="accesodatos/modelos/Libros.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
